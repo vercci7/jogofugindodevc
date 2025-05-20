@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo do Amor</title>
+  <link rel="stylesheet" href="jogo.css" />
+  <style>
+    /* Estilos extras inline (caso necessário) */
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Amor, voce toma banho todos os dias? 🤨</h1>
+
+    <div class="botoes">
+      <button id="sim">Sim </button>
+      <button id="nao">Não </button>
+    </div>
+
+    <div id="mensagem" style="display: none; margin-top: 30px; font-size: 1.5rem; color: #d8c0cd;">
+     EU SABIA KKKK, Mas ainda te amo, minha gambazinha linda!
+    </div>
+  </div>
+
+  <script>
+    const btnSim = document.getElementById("sim");
+    const btnNao = document.getElementById("nao");
+    const mensagem = document.getElementById("mensagem");
+
+    btnNao.addEventListener("click", () => {
+      mensagem.style.display = "block";
+    });
+
+    btnSim.addEventListener("mouseover", () => {
+      const largura = window.innerWidth - btnSim.offsetWidth;
+      const altura = window.innerHeight - btnSim.offsetHeight;
+      const novaPosX = Math.random() * largura;
+      const novaPosY = Math.random() * altura;
+
+      btnSim.style.position = "absolute";
+      btnSim.style.left = `${novaPosX}px`;
+      btnSim.style.top = `${novaPosY}px`;
+    });
+  </script>
+
+</body>
+</html>
+
